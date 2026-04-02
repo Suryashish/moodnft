@@ -3,10 +3,10 @@ import { NextResponse } from "next/server";
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { mood } = body;
+    const { moods } = body;
 
-    if (!mood) {
-      return NextResponse.json({ error: "Mood is required" }, { status: 400 });
+    if (!moods || !Array.isArray(moods) || moods.length === 0) {
+      return NextResponse.json({ error: "At least one mood is required" }, { status: 400 });
     }
 
     const apiKey = process.env.NEXT_STABILITY_API;
@@ -14,9 +14,13 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: "Stability API key missing from environment" }, { status: 500 });
     }
 
+    // Advanced Prompt Synthesis Engine
+    const blendString = moods.join(", ");
+    const masterPrompt = `A breathtaking, abstract cinematic masterpiece visualizing the conceptual blend of the following intersecting human emotions and aesthetic concepts: [${blendString}]. Intricate lighting, highly conceptual, vivid surrealism, masterpiece heavily trending on artstation, 8k resolution, ethereal atmosphere.`;
+
     // Using Stability AI v2beta API
     const formData = new FormData();
-    formData.append("prompt", `A highly artistic and creative digital artwork representing the feeling or mood: ${mood}. Masterpiece, trending on artstation, vivid colors, evocative.`);
+    formData.append("prompt", masterPrompt);
     formData.append("output_format", "png");
 
     const response = await fetch(
