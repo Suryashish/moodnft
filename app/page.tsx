@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Signer } from "ethers";
 import { getSigner } from "@/lib/ethers";
 import WalletConnect from "./components/WalletConnect";
+import LandingHero from "./components/LandingHero";
 import MintForm from "./components/MintForm";
 import Gallery from "./components/Gallery";
 
@@ -39,7 +40,7 @@ export default function Home() {
     <div className="min-h-screen bg-[#f5f5f5] dark:bg-[#121212] font-sans transition-colors duration-300">
       
       {/* Material UI AppBar */}
-      <header className="sticky top-0 z-50 w-full bg-[#1976d2] dark:bg-[#1e1e1e] shadow-md dark:border-b dark:border-gray-800 text-white">
+      <header className="sticky top-0 z-50 w-full bg-[#1976d2] border-b border-white/10 dark:bg-[#1e1e1e] shadow-md text-white transition-colors duration-300">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center gap-4">
@@ -61,11 +62,17 @@ export default function Home() {
       </header>
 
       {/* Main Content Area */}
-      <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20 relative">
-        <MintForm signer={signer} account={account} />
+      <main className="w-full relative">
+        <LandingHero />
         
-        {/* Gallery Component fetching directly from Nero Blockchain */}
-        <Gallery signer={signer} account={account} />
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div id="mint-section" className="scroll-mt-24">
+            <MintForm signer={signer} account={account} />
+          </div>
+          
+          {/* Gallery Component fetching directly from Nero Blockchain */}
+          <Gallery signer={signer} account={account} />
+        </div>
       </main>
       
     </div>
