@@ -175,14 +175,14 @@ export default function Gallery({ signer, account }: GalleryProps) {
                     <ImageIcon className="w-10 h-10 opacity-30" />
                   </div>
                 )}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
                    <p className="text-xs text-white/80 uppercase tracking-widest leading-relaxed">
                      <span className="text-[#90caf9] font-bold">Metadata:</span> IPFS Native
                    </p>
                 </div>
               </div>
 
-              <div className="p-6 flex-grow flex flex-col">
+              <div className="p-6 grow flex flex-col">
                 <div className="flex justify-between items-start mb-3">
                   <h3 className="font-black text-xl text-gray-900 dark:text-white uppercase tracking-tight">
                     Token #{nft.tokenId}

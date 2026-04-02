@@ -103,7 +103,7 @@ export default function MintForm({ signer, account }: MintFormProps) {
               placeholder=" "
               maxLength={200}
             />
-            <label htmlFor="moodInput" className="absolute text-base text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white dark:bg-[#121212] px-2 peer-focus:px-2 peer-focus:text-[#1976d2] peer-focus:dark:text-[#1976d2] peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-8 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-3 cursor-text pointer-events-none font-medium">
+            <label htmlFor="moodInput" className="absolute text-base text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-left bg-white dark:bg-[#121212] px-2 peer-focus:px-2 peer-focus:text-[#1976d2] peer-focus:dark:text-[#1976d2] peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-8 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-3 cursor-text pointer-events-none font-medium">
               How are you feeling today?
             </label>
             <div className="absolute right-3 bottom-3 text-xs font-bold tracking-widest text-[#1976d2]">
@@ -138,7 +138,7 @@ export default function MintForm({ signer, account }: MintFormProps) {
             {generatedImage && (
               <div className="mb-6 rounded overflow-hidden shadow-[0_4px_20px_rgb(0,0,0,0.15)] dark:shadow-[0_4px_20px_rgb(0,0,0,0.6)] relative aspect-square group">
                 <img src={generatedImage} alt="Generated Mood Artwork" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <div className="absolute bottom-4 left-4 text-white text-xs font-bold tracking-widest uppercase px-3 py-1.5 rounded flex items-center gap-2 bg-[#1976d2]/90 backdrop-blur-sm shadow">
                   <ImageIcon className="w-3.5 h-3.5" />
                   AI Masterpiece
