@@ -22,7 +22,7 @@ export default function LandingHero() {
         
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-gray-900 dark:text-white tracking-tighter leading-tight mb-6 uppercase">
           Solidify Your Emotions as <br className="hidden sm:block" />
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#1976d2] to-[#42a5f5]">
+          <span className="bg-clip-text text-transparent bg-linear-to-r from-[#1976d2] to-[#42a5f5]">
             Immutable Assets.
           </span>
         </h1>
